@@ -1,0 +1,394 @@
+{
+  "frost_imps": {
+    "tier": "common",
+    "biomes": ["snow"],
+    "description": "Small, mischievous creatures made of ice, quick and slippery on the snowy terrain",
+    "abilities": ["Can throw snowballs that slow the player", "Slide quickly across ice patches"],
+    "base_hp": 80,
+    "base_damage": 8
+  },
+  "jungle_creepers": {
+    "tier": "common",
+    "biomes": ["jungle"],
+    "description": "Vine-covered beasts that blend into the lush foliage, ambushing unwary travelers",
+    "abilities": ["Can entangle the player with vines", "Reduced mobility and damage over time"],
+    "base_hp": 90,
+    "base_damage": 10
+  },
+  "swamp_sludges": {
+    "tier": "common",
+    "biomes": ["swamp"],
+    "description": "Gelatinous blobs that absorb organic waste to grow larger and more dangerous",
+    "abilities": ["Split into smaller blobs when attacked", "Emit poisonous gas when threatened"],
+    "base_hp": 100,
+    "base_damage": 12
+  },
+  "moonlight_wolves": {
+    "tier": "common",
+    "biomes": ["werewolf"],
+    "description": "Pack hunters that roam under the night sky, their eyes glowing with a haunting light",
+    "abilities": ["Howl to summon more wolves", "Bites have chance to cause bleeding"],
+    "base_hp": 110,
+    "base_damage": 14
+  },
+  "blood_bats": {
+    "tier": "common",
+    "biomes": ["vampire"],
+    "description": "Flying creatures that feast on the blood of the living, often found swarming in dark places",
+    "abilities": ["Drain health from player", "Quickly dodge melee attacks"],
+    "base_hp": 70,
+    "base_damage": 9
+  },
+  "infernal_minions": {
+    "tier": "common",
+    "biomes": ["satanic"],
+    "description": "Lesser demons spawned from the fires of the underworld, eager to spread chaos",
+    "abilities": ["Explode upon death dealing area damage", "Ignite player with fiery breath"],
+    "base_hp": 95,
+    "base_damage": 13
+  },
+  "stone_sentinels": {
+    "tier": "common",
+    "biomes": ["rocky"],
+    "description": "Animated statues guarding ancient ruins, stoic until provoked",
+    "abilities": ["Resistant to physical attacks", "Slam ground causing brief stun"],
+    "base_hp": 130,
+    "base_damage": 11
+  },
+  "fae_sprites": {
+    "tier": "common",
+    "biomes": ["fairy"],
+    "description": "Mischievous and ethereal beings with a penchant for tricks and illusions",
+    "abilities": ["Become temporarily invisible", "Cast confusing spells that invert controls"],
+    "base_hp": 60,
+    "base_damage": 8
+  },
+  "astral_specters": {
+    "tier": "common",
+    "biomes": ["astral_void"],
+    "description": "Ghostly entities that drift through the cosmos, remnants of forgotten astral conflicts",
+    "abilities": ["Phase through physical attacks", "Emit bursts of astral energy"],
+    "base_hp": 85,
+    "base_damage": 12
+  },
+  "goblin_tinkers": {
+    "tier": "common",
+    "biomes": ["jungle", "rocky", "swamp"],
+    "description": "Crafty goblins with a knack for machinery and explosives",
+    "abilities": ["Throw makeshift bombs", "Disassemble traps for gadget components"],
+    "base_hp": 75,
+    "base_damage": 10
+  },
+  "rogue_mercenaries": {
+    "tier": "common",
+    "biomes": ["werewolf", "vampire"],
+    "description": "Battle-hardened fighters for hire, found throughout the dungeon seeking treasure",
+    "abilities": ["Expert in melee and ranged combat", "Can block or parry attacks"],
+    "base_hp": 120,
+    "base_damage": 15
+  },
+  "cursed_armor": {
+    "tier": "common",
+    "biomes": ["vampire", "satanic"],
+    "description": "Animated suits of armor, haunted by spirits of fallen heroes",
+    "abilities": ["Highly resistant to physical damage", "Powerful shield bash that stuns"],
+    "base_hp": 140,
+    "base_damage": 13
+  },
+  "shadow_stalkers": {
+    "tier": "common",
+    "biomes": ["vampire", "werewolf", "satanic", "fairy"],
+    "description": "Ethereal creatures that thrive in shadows, attacking with stealth and precision",
+    "abilities": ["Nearly invisible in low light", "Surprise attacks deal increased damage"],
+    "base_hp": 80,
+    "base_damage": 16
+  },
+  "arcane_wisps": {
+    "tier": "common",
+    "biomes": ["jungle", "fairy", "astral_void"],
+    "description": "Errant magical energies condensed into floating orbs",
+    "abilities": ["Randomly cast spells from various elemental schools"],
+    "base_hp": 65,
+    "base_damage": 11
+  },
+  "plague_rats": {
+    "tier": "common",
+    "biomes": ["swamp"],
+    "description": "Diseased rats that swarm through darker, damper parts of the dungeon",
+    "abilities": ["Infectious bites cause lingering damage", "Weaken player defenses"],
+    "base_hp": 50,
+    "base_damage": 7
+  },
+  "fire_sprites": {
+    "tier": "common",
+    "biomes": ["jungle", "satanic"],
+    "description": "Playful but dangerous spirits of fire that dart around, igniting surroundings",
+    "abilities": ["Ignite flammable materials", "Throw small fireballs"],
+    "base_hp": 70,
+    "base_damage": 12
+  },
+  "crystal_scavengers": {
+    "tier": "common",
+    "biomes": ["snow", "rocky"],
+    "description": "Beasts with crystalline bodies that hunt for magical minerals",
+    "abilities": ["Reflect magical attacks", "Burrow to avoid damage"],
+    "base_hp": 100,
+    "base_damage": 10
+  },
+  "thunderbirds": {
+    "tier": "common",
+    "biomes": ["astral_void"],
+    "description": "Majestic birds that control the weather, often found perched high",
+    "abilities": ["Cause gusts of wind that knock players back", "Summon lightning"],
+    "base_hp": 105,
+    "base_damage": 14
+  },
+  "banshee_wailers": {
+    "tier": "common",
+    "biomes": ["swamp"],
+    "description": "Ghostly figures whose cries echo through the dungeon",
+    "abilities": ["Screams disorient and slow players", "Pass through obstacles"],
+    "base_hp": 75,
+    "base_damage": 10
+  },
+  "mystic_oracles": {
+    "tier": "common",
+    "biomes": ["fairy"],
+    "description": "Mysterious figures using arcane tools to manipulate fates",
+    "abilities": ["Cast debuffs that alter stats", "Conjure illusions"],
+    "base_hp": 85,
+    "base_damage": 9
+  },
+  "ice_revenants": {
+    "tier": "common",
+    "biomes": ["snow"],
+    "description": "Frozen undead warriors, wielding swords of pure ice",
+    "abilities": ["Freeze ground to slow player", "Shatter into ice shards when damaged"],
+    "base_hp": 115,
+    "base_damage": 13
+  },
+  "stone_golem": {
+    "tier": "mini_boss",
+    "biomes": ["rocky"],
+    "description": "A smaller but formidable golem made of rubble and ancient armor",
+    "abilities": ["Charges at player causing area damage", "Pull rocks from walls as shields"],
+    "base_hp": 350,
+    "base_damage": 25
+  },
+  "spectral_knight": {
+    "tier": "mini_boss",
+    "biomes": ["vampire"],
+    "description": "A ghostly armored knight wielding a large spectral blade",
+    "abilities": ["Attacks bypass normal defenses", "Teleport short distances", "Summon spectral minions"],
+    "base_hp": 380,
+    "base_damage": 28
+  },
+  "crimson_witch": {
+    "tier": "mini_boss",
+    "biomes": ["vampire"],
+    "description": "A dark sorceress who specializes in blood magic and curses",
+    "abilities": ["Area-of-effect blood curses", "Conjure barriers of thorns", "Turn invulnerable temporarily"],
+    "base_hp": 320,
+    "base_damage": 22
+  },
+  "hydra_spawn": {
+    "tier": "mini_boss",
+    "biomes": ["jungle"],
+    "description": "A smaller version of a mythical hydra with multiple regenerating heads",
+    "abilities": ["Each head has different breath attack", "Cutting one head causes two more to grow"],
+    "base_hp": 400,
+    "base_damage": 26
+  },
+  "iron_construct": {
+    "tier": "mini_boss",
+    "biomes": ["rocky"],
+    "description": "A heavily armored automaton powered by steam and ancient technology",
+    "abilities": ["Emits scalding steam clouds", "Powerful charge attack", "Repairs itself"],
+    "base_hp": 420,
+    "base_damage": 30
+  },
+  "mud_behemoth": {
+    "tier": "mini_boss",
+    "biomes": ["swamp"],
+    "description": "A massive creature made of swamp mud and plant matter",
+    "abilities": ["Absorb water to increase size", "Launch globs of mud that slow"],
+    "base_hp": 390,
+    "base_damage": 24
+  },
+  "shadow_assassin": {
+    "tier": "mini_boss",
+    "biomes": ["werewolf", "vampire"],
+    "description": "A stealthy and deadly assassin that blends into shadows",
+    "abilities": ["Become invisible", "Set traps that snare", "Quick lethal strikes"],
+    "base_hp": 300,
+    "base_damage": 32
+  },
+  "frost_banshee": {
+    "tier": "mini_boss",
+    "biomes": ["snow"],
+    "description": "A chilling wraith that wails to freeze foes in place",
+    "abilities": ["Freezing scream immobilizes", "Summon icy winds"],
+    "base_hp": 330,
+    "base_damage": 23
+  },
+  "arcane_sentinel": {
+    "tier": "mini_boss",
+    "biomes": ["fairy"],
+    "description": "An ancient guardian constructed from enchanted stone and arcane crystals",
+    "abilities": ["Fires beams of magical energy", "Creates barriers of arcane force"],
+    "base_hp": 370,
+    "base_damage": 26
+  },
+  "toxic_maw": {
+    "tier": "mini_boss",
+    "biomes": ["jungle", "swamp"],
+    "description": "A giant beast with acidic saliva and poisonous spikes",
+    "abilities": ["Spits pools of acid", "Charges leaving toxic sludge trail"],
+    "base_hp": 380,
+    "base_damage": 27
+  },
+  "inferno_drake": {
+    "tier": "mini_boss",
+    "biomes": ["satanic"],
+    "description": "A young dragon with smoldering scales capable of igniting surroundings",
+    "abilities": ["Breathes fire in wide arcs", "Tail swipe ignites ground", "Takes flight"],
+    "base_hp": 410,
+    "base_damage": 29
+  },
+  "thunder_wraith": {
+    "tier": "mini_boss",
+    "biomes": ["astral_void"],
+    "description": "A ghostly figure crackling with raw electrical energy",
+    "abilities": ["Casts chain lightning", "Summons electric storms"],
+    "base_hp": 340,
+    "base_damage": 28
+  },
+  "boulder_beast": {
+    "tier": "mini_boss",
+    "biomes": ["rocky", "werewolf"],
+    "description": "Composed of rocks and earth, can reshape form to crush foes",
+    "abilities": ["Rolls into massive boulder", "Causes localized earthquakes"],
+    "base_hp": 430,
+    "base_damage": 26
+  },
+  "necrotic_alchemist": {
+    "tier": "mini_boss",
+    "biomes": ["vampire", "swamp"],
+    "description": "A mad scientist obsessed with death and decay",
+    "abilities": ["Throws explosive vials releasing necrotic gas", "Reanimates defeated minions"],
+    "base_hp": 310,
+    "base_damage": 24
+  },
+  "crystal_colossus": {
+    "tier": "mini_boss",
+    "biomes": ["astral_void", "rocky"],
+    "description": "A towering figure made from radiant crystals",
+    "abilities": ["Laser attacks that ricochet", "Regenerates health by absorbing light"],
+    "base_hp": 450,
+    "base_damage": 27
+  },
+  "rogue_elementalist": {
+    "tier": "mini_boss",
+    "biomes": ["fairy"],
+    "description": "A former mage turned rogue, wielding chaotic elemental magic",
+    "abilities": ["Cycles through fire, ice, and lightning spells"],
+    "base_hp": 350,
+    "base_damage": 25
+  },
+  "sand_serpent": {
+    "tier": "mini_boss",
+    "biomes": ["rocky"],
+    "description": "A massive serpent that burrows through sand and strikes with terrifying speed",
+    "abilities": ["Creates quicksand traps", "Lunges from beneath for surprise attacks"],
+    "base_hp": 360,
+    "base_damage": 26
+  },
+  "magma_goliath": {
+    "tier": "mini_boss",
+    "biomes": ["satanic"],
+    "description": "Born from heart of volcano, skin is molten rock and fire",
+    "abilities": ["Spews molten lava", "Causes fiery eruptions"],
+    "base_hp": 460,
+    "base_damage": 31
+  },
+  "wind_screecher": {
+    "tier": "mini_boss",
+    "biomes": ["astral_void"],
+    "description": "A bird-like creature with mastery over winds",
+    "abilities": ["Creates wind barriers", "Swoops down rapidly from sky"],
+    "base_hp": 320,
+    "base_damage": 24
+  },
+  "jungle_titan": {
+    "tier": "mega_boss",
+    "biomes": ["jungle"],
+    "description": "An enormous moving tree with vines and wildlife supporting it",
+    "abilities": ["Swings massive branches", "Releases spores causing hallucinations", "Heals by rooting"],
+    "base_hp": 800,
+    "base_damage": 45
+  },
+  "frost_wyrm": {
+    "tier": "mega_boss",
+    "biomes": ["snow"],
+    "description": "A gigantic dragon made of ice and snow, capable of freezing attacks and summoning blizzards",
+    "abilities": ["Breathes icy wind that slows", "Summons ice minions", "Creates slippery terrain"],
+    "base_hp": 850,
+    "base_damage": 48
+  },
+  "swamp_leviathan": {
+    "tier": "mega_boss",
+    "biomes": ["swamp"],
+    "description": "A massive serpent-like creature lurking beneath murky waters",
+    "abilities": ["Uses camouflage", "Attacks from below to unbalance", "Spits toxic venom"],
+    "base_hp": 820,
+    "base_damage": 46
+  },
+  "lycan_alpha": {
+    "tier": "mega_boss",
+    "biomes": ["werewolf"],
+    "description": "The leader of the werewolf pack, larger and more cunning",
+    "abilities": ["Transforms under full moon", "Calls pack members", "Enhanced speed and damage"],
+    "base_hp": 880,
+    "base_damage": 50
+  },
+  "vampire_lord": {
+    "tier": "mega_boss",
+    "biomes": ["vampire"],
+    "description": "An ancient and noble vampire with power to control shadows and blood",
+    "abilities": ["Drains life to heal", "Summons lesser vampires", "Becomes intangible"],
+    "base_hp": 840,
+    "base_damage": 47
+  },
+  "demon_warlord": {
+    "tier": "mega_boss",
+    "biomes": ["satanic"],
+    "description": "A towering demon armored in molten lava",
+    "abilities": ["Commands fire", "Summon hellfire from ground", "Charge attacks leave fire trail"],
+    "base_hp": 900,
+    "base_damage": 52
+  },
+  "giant_stone_guardian": {
+    "tier": "mega_boss",
+    "biomes": ["rocky"],
+    "description": "A colossal guardian made from the rocks of the dungeon itself",
+    "abilities": ["Immensely strong physical attacks", "Causes rockfalls", "Temporarily petrifies player"],
+    "base_hp": 950,
+    "base_damage": 49
+  },
+  "fae_queen": {
+    "tier": "mega_boss",
+    "biomes": ["fairy"],
+    "description": "A deceptive and powerful fairy that uses magic to confuse and attack",
+    "abilities": ["Casts illusions to duplicate herself", "Teleports short distances", "Nature-based magic attacks"],
+    "base_hp": 780,
+    "base_damage": 44
+  },
+  "celestial_sentinel": {
+    "tier": "mega_boss",
+    "biomes": ["astral_void"],
+    "description": "A guardian of the cosmic threshold cloaked in starlight",
+    "abilities": ["Calls down meteors", "Generates gravitational fields", "Void pulse wave", "Creates illusions"],
+    "base_hp": 920,
+    "base_damage": 51
+  }
+}

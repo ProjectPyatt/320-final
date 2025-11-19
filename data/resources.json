@@ -1,0 +1,326 @@
+{
+  "hardwood": {
+    "biome": "jungle",
+    "rarity": "common",
+    "description": "Used for basic crafting",
+    "value": 5
+  },
+  "ironwood": {
+    "biome": "jungle",
+    "rarity": "uncommon",
+    "description": "Durable material for advanced crafting",
+    "value": 15
+  },
+  "medicinal_herbs": {
+    "biome": "jungle",
+    "rarity": "common",
+    "description": "Healing items",
+    "value": 8
+  },
+  "rare_orchids": {
+    "biome": "jungle",
+    "rarity": "rare",
+    "description": "Valuable alchemy ingredient",
+    "value": 40
+  },
+  "jungle_fruits": {
+    "biome": "jungle",
+    "rarity": "common",
+    "description": "Food source",
+    "value": 3
+  },
+  "poison_glands": {
+    "biome": "jungle",
+    "rarity": "uncommon",
+    "description": "Dropped by enemies, used in alchemy",
+    "value": 12
+  },
+  "ice_crystals": {
+    "biome": "snow",
+    "rarity": "common",
+    "description": "Crafting material",
+    "value": 6
+  },
+  "frozen_herbs": {
+    "biome": "snow",
+    "rarity": "uncommon",
+    "description": "Preservation material",
+    "value": 14
+  },
+  "rare_minerals": {
+    "biome": "snow",
+    "rarity": "rare",
+    "description": "Embedded in ice, valuable",
+    "value": 45
+  },
+  "frost_shards": {
+    "biome": "snow",
+    "rarity": "uncommon",
+    "description": "Magical component",
+    "value": 18
+  },
+  "yeti_fur": {
+    "biome": "snow",
+    "rarity": "uncommon",
+    "description": "Dropped by enemies, warm material",
+    "value": 16
+  },
+  "glacial_water": {
+    "biome": "snow",
+    "rarity": "common",
+    "description": "Pure water source",
+    "value": 4
+  },
+  "swamp_moss": {
+    "biome": "swamp",
+    "rarity": "common",
+    "description": "Alchemy base",
+    "value": 5
+  },
+  "murky_water": {
+    "biome": "swamp",
+    "rarity": "common",
+    "description": "Basic resource",
+    "value": 2
+  },
+  "poison_sacs": {
+    "biome": "swamp",
+    "rarity": "uncommon",
+    "description": "Enemy drops for poison crafting",
+    "value": 20
+  },
+  "bog_iron": {
+    "biome": "swamp",
+    "rarity": "uncommon",
+    "description": "Low-grade metal",
+    "value": 11
+  },
+  "fungal_spores": {
+    "biome": "swamp",
+    "rarity": "rare",
+    "description": "Potent alchemy ingredient",
+    "value": 38
+  },
+  "reed_bundles": {
+    "biome": "swamp",
+    "rarity": "common",
+    "description": "Crafting material",
+    "value": 4
+  },
+  "blood_vials": {
+    "biome": "vampire",
+    "rarity": "uncommon",
+    "description": "Ritual component",
+    "value": 22
+  },
+  "ancient_tomes": {
+    "biome": "vampire",
+    "rarity": "rare",
+    "description": "Knowledge/lore items",
+    "value": 50
+  },
+  "silver_ore": {
+    "biome": "vampire",
+    "rarity": "uncommon",
+    "description": "Anti-undead material",
+    "value": 24
+  },
+  "gothic_relics": {
+    "biome": "vampire",
+    "rarity": "rare",
+    "description": "Valuable artifacts",
+    "value": 55
+  },
+  "bat_wings": {
+    "biome": "vampire",
+    "rarity": "common",
+    "description": "Enemy drops",
+    "value": 6
+  },
+  "darkwood": {
+    "biome": "vampire",
+    "rarity": "uncommon",
+    "description": "Building material from dark forests",
+    "value": 13
+  },
+  "wolf_pelts": {
+    "biome": "werewolf",
+    "rarity": "common",
+    "description": "Crafting material for armor",
+    "value": 8
+  },
+  "moonstone_shards": {
+    "biome": "werewolf",
+    "rarity": "rare",
+    "description": "Magical gem",
+    "value": 48
+  },
+  "forest_herbs": {
+    "biome": "werewolf",
+    "rarity": "common",
+    "description": "Medicinal herbs",
+    "value": 5
+  },
+  "silver_dust": {
+    "biome": "werewolf",
+    "rarity": "uncommon",
+    "description": "Purification material",
+    "value": 19
+  },
+  "claw_fragments": {
+    "biome": "werewolf",
+    "rarity": "uncommon",
+    "description": "Enemy drops for weapon crafting",
+    "value": 17
+  },
+  "ancient_bark": {
+    "biome": "werewolf",
+    "rarity": "uncommon",
+    "description": "Strong material from ancient trees",
+    "value": 15
+  },
+  "iron_ore": {
+    "biome": "rocky",
+    "rarity": "common",
+    "description": "Basic metal for crafting",
+    "value": 7
+  },
+  "copper_ore": {
+    "biome": "rocky",
+    "rarity": "common",
+    "description": "Crafting metal",
+    "value": 6
+  },
+  "gemstones": {
+    "biome": "rocky",
+    "rarity": "rare",
+    "description": "Valuable minerals",
+    "value": 60
+  },
+  "stone_blocks": {
+    "biome": "rocky",
+    "rarity": "common",
+    "description": "Building material",
+    "value": 3
+  },
+  "cave_crystals": {
+    "biome": "rocky",
+    "rarity": "uncommon",
+    "description": "Light source and magical component",
+    "value": 16
+  },
+  "obsidian_shards": {
+    "biome": "rocky",
+    "rarity": "rare",
+    "description": "Sharp crafting material for weapons",
+    "value": 42
+  },
+  "brimstone": {
+    "biome": "satanic",
+    "rarity": "common",
+    "description": "Sulfur material",
+    "value": 9
+  },
+  "demon_ichor": {
+    "biome": "satanic",
+    "rarity": "uncommon",
+    "description": "Dark alchemy ingredient",
+    "value": 25
+  },
+  "hellfire_ash": {
+    "biome": "satanic",
+    "rarity": "uncommon",
+    "description": "Volatile material",
+    "value": 21
+  },
+  "soul_fragments": {
+    "biome": "satanic",
+    "rarity": "rare",
+    "description": "Mystical component",
+    "value": 65
+  },
+  "infernal_iron": {
+    "biome": "satanic",
+    "rarity": "uncommon",
+    "description": "Heat-forged metal",
+    "value": 23
+  },
+  "cursed_relics": {
+    "biome": "satanic",
+    "rarity": "rare",
+    "description": "Powerful but dangerous",
+    "value": 70
+  },
+  "fairy_dust": {
+    "biome": "fairy",
+    "rarity": "rare",
+    "description": "Potent magic catalyst",
+    "value": 52
+  },
+  "enchanted_flowers": {
+    "biome": "fairy",
+    "rarity": "uncommon",
+    "description": "Alchemy ingredient with magical properties",
+    "value": 18
+  },
+  "moonwell_water": {
+    "biome": "fairy",
+    "rarity": "rare",
+    "description": "Pure magical water",
+    "value": 46
+  },
+  "sprite_wings": {
+    "biome": "fairy",
+    "rarity": "uncommon",
+    "description": "Enemy drops",
+    "value": 20
+  },
+  "dream_silk": {
+    "biome": "fairy",
+    "rarity": "rare",
+    "description": "Ethereal fabric",
+    "value": 58
+  },
+  "glowshrooms": {
+    "biome": "fairy",
+    "rarity": "common",
+    "description": "Bioluminescent fungi for light",
+    "value": 7
+  },
+  "stardust": {
+    "biome": "astral_void",
+    "rarity": "uncommon",
+    "description": "Cosmic material",
+    "value": 28
+  },
+  "void_crystals": {
+    "biome": "astral_void",
+    "rarity": "rare",
+    "description": "Dimensional energy source",
+    "value": 75
+  },
+  "meteorite_fragments": {
+    "biome": "astral_void",
+    "rarity": "uncommon",
+    "description": "Space metal",
+    "value": 26
+  },
+  "astral_essence": {
+    "biome": "astral_void",
+    "rarity": "rare",
+    "description": "Pure magical energy",
+    "value": 68
+  },
+  "nebula_gas": {
+    "biome": "astral_void",
+    "rarity": "uncommon",
+    "description": "Exotic resource",
+    "value": 22
+  },
+  "cosmic_ore": {
+    "biome": "astral_void",
+    "rarity": "rare",
+    "description": "Otherworldly metal",
+    "value": 80
+  }
+}

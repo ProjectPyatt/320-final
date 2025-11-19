@@ -1,0 +1,236 @@
+{
+  "jungle": {
+    "theme": "Lush, overgrown vegetation with hidden dangers",
+    "characteristics": [
+      "Dense foliage and vines",
+      "Hidden paths and ambush points",
+      "High resource availability"
+    ],
+    "resources": [
+      "hardwood",
+      "ironwood",
+      "medicinal_herbs",
+      "rare_orchids",
+      "jungle_fruits",
+      "poison_glands"
+    ],
+    "common_enemies": [
+      "jungle_creepers",
+      "fire_sprites",
+      "arcane_wisps"
+    ],
+    "mini_bosses": [
+      "hydra_spawn",
+      "toxic_maw"
+    ],
+    "mega_boss": "jungle_titan"
+  },
+  "snow": {
+    "theme": "Frozen wasteland with limited visibility",
+    "characteristics": [
+      "Slippery terrain",
+      "Reduced movement speed",
+      "Cold damage hazards"
+    ],
+    "resources": [
+      "ice_crystals",
+      "frozen_herbs",
+      "rare_minerals",
+      "frost_shards",
+      "yeti_fur",
+      "glacial_water"
+    ],
+    "common_enemies": [
+      "frost_imps",
+      "ice_revenants",
+      "crystal_scavengers"
+    ],
+    "mini_bosses": [
+      "frost_banshee",
+      "ice_revenant"
+    ],
+    "mega_boss": "frost_wyrm"
+  },
+  "swamp": {
+    "theme": "Murky, fog-covered wetlands",
+    "characteristics": [
+      "Hidden water paths",
+      "Poison hazards",
+      "Visibility reduction"
+    ],
+    "resources": [
+      "swamp_moss",
+      "murky_water",
+      "poison_sacs",
+      "bog_iron",
+      "fungal_spores",
+      "reed_bundles"
+    ],
+    "common_enemies": [
+      "swamp_sludges",
+      "plague_rats",
+      "banshee_wailers"
+    ],
+    "mini_bosses": [
+      "mud_behemoth",
+      "toxic_maw"
+    ],
+    "mega_boss": "swamp_leviathan"
+  },
+  "vampire": {
+    "theme": "Gothic architecture, dark and eerie",
+    "characteristics": [
+      "Blood-themed aesthetics",
+      "Dark corridors",
+      "Life-draining hazards"
+    ],
+    "resources": [
+      "blood_vials",
+      "ancient_tomes",
+      "silver_ore",
+      "gothic_relics",
+      "bat_wings",
+      "darkwood"
+    ],
+    "common_enemies": [
+      "blood_bats",
+      "shadow_stalkers",
+      "cursed_armor"
+    ],
+    "mini_bosses": [
+      "spectral_knight",
+      "crimson_witch"
+    ],
+    "mega_boss": "vampire_lord"
+  },
+  "werewolf": {
+    "theme": "Forested areas under a full moon",
+    "characteristics": [
+      "Dense forest terrain",
+      "Pack enemy behavior",
+      "Night-time aesthetics"
+    ],
+    "resources": [
+      "wolf_pelts",
+      "moonstone_shards",
+      "forest_herbs",
+      "silver_dust",
+      "claw_fragments",
+      "ancient_bark"
+    ],
+    "common_enemies": [
+      "moonlight_wolves",
+      "shadow_stalkers",
+      "rogue_mercenaries"
+    ],
+    "mini_bosses": [
+      "shadow_assassin",
+      "boulder_beast"
+    ],
+    "mega_boss": "lycan_alpha"
+  },
+  "rocky": {
+    "theme": "Mountainous terrain with caves",
+    "characteristics": [
+      "Rockfall hazards",
+      "Cave systems",
+      "High mineral content"
+    ],
+    "resources": [
+      "iron_ore",
+      "copper_ore",
+      "gemstones",
+      "stone_blocks",
+      "cave_crystals",
+      "obsidian_shards"
+    ],
+    "common_enemies": [
+      "stone_sentinels",
+      "crystal_scavengers",
+      "goblin_tinkers"
+    ],
+    "mini_bosses": [
+      "stone_golem",
+      "boulder_beast"
+    ],
+    "mega_boss": "giant_stone_guardian"
+  },
+  "satanic": {
+    "theme": "Hellish landscapes with fire hazards",
+    "characteristics": [
+      "Fire damage zones",
+      "Demonic enemies",
+      "Ritual-based aesthetics"
+    ],
+    "resources": [
+      "brimstone",
+      "demon_ichor",
+      "hellfire_ash",
+      "soul_fragments",
+      "infernal_iron",
+      "cursed_relics"
+    ],
+    "common_enemies": [
+      "infernal_minions",
+      "fire_sprites",
+      "shadow_stalkers"
+    ],
+    "mini_bosses": [
+      "inferno_drake",
+      "magma_goliath"
+    ],
+    "mega_boss": "demon_warlord"
+  },
+  "fairy": {
+    "theme": "Enchanted forest with illusions",
+    "characteristics": [
+      "Deceptive paths",
+      "Illusion-based challenges",
+      "Magical creatures"
+    ],
+    "resources": [
+      "fairy_dust",
+      "enchanted_flowers",
+      "moonwell_water",
+      "sprite_wings",
+      "dream_silk",
+      "glowshrooms"
+    ],
+    "common_enemies": [
+      "fae_sprites",
+      "arcane_wisps",
+      "mystic_oracles"
+    ],
+    "mini_bosses": [
+      "rogue_elementalist",
+      "arcane_sentinel"
+    ],
+    "mega_boss": "fae_queen"
+  },
+  "astral_void": {
+    "theme": "Cosmic/space aesthetic with gravitational anomalies",
+    "characteristics": [
+      "Starfield visuals",
+      "Gravity effects",
+      "Cosmic hazards"
+    ],
+    "resources": [
+      "stardust",
+      "void_crystals",
+      "meteorite_fragments",
+      "astral_essence",
+      "nebula_gas",
+      "cosmic_ore"
+    ],
+    "common_enemies": [
+      "astral_specters",
+      "arcane_wisps",
+      "thunderbirds"
+    ],
+    "mini_bosses": [
+      "thunder_wraith",
+      "crystal_colossus"
+    ],
+    "mega_boss": "celestial_sentinel"
+  }
+}
