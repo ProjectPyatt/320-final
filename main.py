@@ -78,9 +78,23 @@ def main():
     if args.biome:
         dungeon.biome = args.biome
 
-    # Render dungeon
+    # Render dungeon with enemies and resources
     renderer = ASCIIRenderer()
-    output = renderer.render(dungeon, show_info=True)
+
+    # Build overlay lists for rendering
+    enemies_overlay = []
+    resources_overlay = []
+
+    # Add enemies
+    for i, enemy_pos in enumerate(dungeon.enemies):
+        symbol = 'E' if i == 0 else 'e'  # First enemy (boss) is 'E', others are 'e'
+        enemies_overlay.append((enemy_pos[0], enemy_pos[1], symbol))
+
+    # Add resources
+    for resource_pos in dungeon.resources:
+        resources_overlay.append((resource_pos[0], resource_pos[1], '$'))
+
+    output = renderer.render_with_overlay(dungeon, enemies_overlay, resources_overlay)
 
     # Validate if requested
     if args.validate:

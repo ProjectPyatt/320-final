@@ -6,6 +6,8 @@ Procedural generation algorithms for dungeon creation
 import random
 from typing import List, Tuple, Optional
 from .dungeon import Dungeon, Room, TileType
+from .enemy import EnemyManager, EnemyTier
+from .resource import ResourceManager, ResourceRarity
 
 
 class DungeonGenerator:
@@ -15,6 +17,8 @@ class DungeonGenerator:
         self.seed = seed
         if seed is not None:
             random.seed(seed)
+        self.enemy_manager = EnemyManager()
+        self.resource_manager = ResourceManager()
 
     def generate(self, floor_number: int, width: int = 60, height: int = 40) -> Dungeon:
         """
@@ -43,11 +47,11 @@ class DungeonGenerator:
         # Connect rooms with corridors
         self._connect_rooms(dungeon)
 
-        # Place enemies (placeholder)
-        # TODO: Implement enemy placement
+        # Place enemies
+        self._place_enemies(dungeon, params)
 
-        # Place resources (placeholder)
-        # TODO: Implement resource placement
+        # Place resources
+        self._place_resources(dungeon)
 
         return dungeon
 
@@ -191,3 +195,92 @@ class DungeonGenerator:
         if len(dungeon.rooms) > 3:
             # Connect first and last room
             dungeon.create_corridor(dungeon.rooms[0].center, dungeon.rooms[-1].center)
+
+    def _place_enemies(self, dungeon: Dungeon, params: dict):
+        """Place enemies in rooms based on biome and floor parameters"""
+        if not dungeon.biome:
+            return
+
+        enemy_count = params['enemy_count']
+        is_boss_floor = params['is_boss_floor']
+        mini_boss_chance = params['mini_boss_chance']
+
+        # Get available enemies for this biome
+        common_enemies = self.enemy_manager.get_enemies_for_biome(dungeon.biome, EnemyTier.COMMON)
+        mini_bosses = self.enemy_manager.get_enemies_for_biome(dungeon.biome, EnemyTier.MINI_BOSS)
+
+        if not common_enemies:
+            return
+
+        # Place mega boss if boss floor
+        if is_boss_floor and dungeon.rooms:
+            boss_room = None
+            for room in dungeon.rooms:
+                if room.is_boss_room:
+                    boss_room = room
+                    break
+
+            if boss_room:
+                mega_boss = self.enemy_manager.get_mega_boss_for_biome(dungeon.biome)
+                if mega_boss:
+                    # Place boss in center of boss room
+                    boss_pos = boss_room.center
+                    room.enemies.append((mega_boss.name, boss_pos))
+                    dungeon.enemies.append(boss_pos)
+                    enemy_count -= 1
+
+        # Maybe place a mini-boss
+        if mini_bosses and random.random() < mini_boss_chance and dungeon.rooms:
+            mini_boss = random.choice(mini_bosses)
+            room = random.choice(dungeon.rooms)
+            if not room.is_boss_room:
+                pos = self._get_random_room_position(room)
+                room.enemies.append((mini_boss.name, pos))
+                dungeon.enemies.append(pos)
+                enemy_count -= 1
+
+        # Place common enemies
+        for _ in range(enemy_count):
+            if not common_enemies or not dungeon.rooms:
+                break
+
+            enemy = random.choice(common_enemies)
+            room = random.choice(dungeon.rooms)
+            pos = self._get_random_room_position(room)
+            room.enemies.append((enemy.name, pos))
+            dungeon.enemies.append(pos)
+
+    def _place_resources(self, dungeon: Dungeon):
+        """Place resources in accessible room locations"""
+        if not dungeon.biome:
+            return
+
+        resources = self.resource_manager.get_resources_for_biome(dungeon.biome)
+        if not resources or not dungeon.rooms:
+            return
+
+        # Determine number of resources based on rarity
+        for resource in resources:
+            spawn_count = 0
+            if resource.rarity == ResourceRarity.COMMON:
+                spawn_count = random.randint(2, 4)
+            elif resource.rarity == ResourceRarity.UNCOMMON:
+                spawn_count = random.randint(1, 2)
+            elif resource.rarity == ResourceRarity.RARE:
+                spawn_count = random.randint(0, 1)
+
+            # Place resources
+            for _ in range(spawn_count):
+                if not dungeon.rooms:
+                    break
+                room = random.choice(dungeon.rooms)
+                pos = self._get_random_room_position(room)
+                room.resources.append((resource.name, pos))
+                dungeon.resources.append(pos)
+
+    def _get_random_room_position(self, room: Room) -> Tuple[int, int]:
+        """Get a random walkable position within a room"""
+        # Stay away from walls (1 tile buffer)
+        x = random.randint(room.x + 1, room.x + room.width - 2)
+        y = random.randint(room.y + 1, room.y + room.height - 2)
+        return (x, y)

@@ -95,13 +95,23 @@ class Dungeon:
         # Horizontal then vertical
         for x in range(min(x1, x2), max(x1, x2) + 1):
             if 0 <= x < self.width and 0 <= y1 < self.height:
-                if self.grid[y1][x] == TileType.EMPTY:
+                current_tile = self.grid[y1][x]
+                # Carve through empty space and walls, but not floors
+                if current_tile in [TileType.EMPTY, TileType.WALL]:
                     self.grid[y1][x] = TileType.CORRIDOR
+                elif current_tile == TileType.FLOOR:
+                    # Already a room floor, leave it
+                    pass
 
         for y in range(min(y1, y2), max(y1, y2) + 1):
             if 0 <= x2 < self.width and 0 <= y < self.height:
-                if self.grid[y][x2] == TileType.EMPTY:
+                current_tile = self.grid[y][x2]
+                # Carve through empty space and walls, but not floors
+                if current_tile in [TileType.EMPTY, TileType.WALL]:
                     self.grid[y][x2] = TileType.CORRIDOR
+                elif current_tile == TileType.FLOOR:
+                    # Already a room floor, leave it
+                    pass
 
     def get_tile(self, x: int, y: int) -> TileType:
         """Get tile type at position"""
