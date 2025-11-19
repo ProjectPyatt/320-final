@@ -20,7 +20,7 @@ class DungeonGenerator:
         self.enemy_manager = EnemyManager()
         self.resource_manager = ResourceManager()
 
-    def generate(self, floor_number: int, width: int = 60, height: int = 40) -> Dungeon:
+    def generate(self, floor_number: int, width: int = 60, height: int = 40, animate_callback=None) -> Dungeon:
         """
         Generate a complete dungeon floor
 
@@ -28,6 +28,7 @@ class DungeonGenerator:
             floor_number: The floor level (1-100)
             width: Dungeon grid width
             height: Dungeon grid height
+            animate_callback: Optional callback function for animation (dungeon, message)
 
         Returns:
             Generated Dungeon instance
@@ -41,17 +42,32 @@ class DungeonGenerator:
         biome = self._select_biome(floor_number)
         dungeon.biome = biome
 
+        if animate_callback:
+            animate_callback(dungeon, f"Selected biome: {biome.upper()}")
+
         # Generate rooms
-        rooms = self._generate_rooms(dungeon, params['room_count'], params['is_boss_floor'])
+        rooms = self._generate_rooms(dungeon, params['room_count'], params['is_boss_floor'], animate_callback)
+
+        if animate_callback:
+            animate_callback(dungeon, f"Generated {len(rooms)} rooms")
 
         # Connect rooms with corridors
         self._connect_rooms(dungeon)
 
+        if animate_callback:
+            animate_callback(dungeon, "Connected rooms with corridors")
+
         # Place enemies
         self._place_enemies(dungeon, params)
 
+        if animate_callback:
+            animate_callback(dungeon, f"Placed {len(dungeon.enemies)} enemies")
+
         # Place resources
         self._place_resources(dungeon)
+
+        if animate_callback:
+            animate_callback(dungeon, f"Placed {len(dungeon.resources)} resources")
 
         return dungeon
 
@@ -130,7 +146,7 @@ class DungeonGenerator:
                      'fairy', 'astral_void', 'astral_void', 'astral_void']
             return random.choice(biomes)
 
-    def _generate_rooms(self, dungeon: Dungeon, room_count: int, is_boss_floor: bool) -> List[Room]:
+    def _generate_rooms(self, dungeon: Dungeon, room_count: int, is_boss_floor: bool, animate_callback=None) -> List[Room]:
         """Generate non-overlapping rooms"""
         rooms = []
         max_attempts = 1000
@@ -166,6 +182,11 @@ class DungeonGenerator:
                         new_room.is_boss_room = True
                     dungeon.add_room(new_room)
                     rooms.append(new_room)
+
+                    if animate_callback:
+                        room_type = "Boss Room" if new_room.is_boss_room else f"Room {len(rooms)}"
+                        animate_callback(dungeon, f"Generating rooms... ({room_type})")
+
                     break
 
         return rooms

@@ -3,6 +3,9 @@ Renderer Module
 ASCII rendering for dungeon visualization
 """
 
+import os
+import sys
+import time
 from .dungeon import Dungeon, TileType
 from typing import Optional
 
@@ -110,3 +113,35 @@ class ASCIIRenderer:
         lines.append(self._render_footer(dungeon))
 
         return "\n".join(lines)
+
+    def clear_screen(self):
+        """Clear the terminal screen"""
+        # Windows
+        if os.name == 'nt':
+            os.system('cls')
+        # Unix/Linux/Mac
+        else:
+            os.system('clear')
+
+    def animate_step(self, dungeon: Dungeon, message: str, enemies: list = None, resources: list = None, delay: float = 0.5):
+        """
+        Render a single animation step
+
+        Args:
+            dungeon: The dungeon to render
+            message: Status message to show
+            enemies: Enemy overlay list
+            resources: Resource overlay list
+            delay: Time to wait after rendering (seconds)
+        """
+        self.clear_screen()
+
+        # Print status message
+        print(f"\n{message}\n")
+
+        # Render the dungeon
+        output = self.render_with_overlay(dungeon, enemies, resources)
+        print(output)
+
+        # Wait
+        time.sleep(delay)

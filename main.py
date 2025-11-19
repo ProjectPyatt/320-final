@@ -52,6 +52,17 @@ def main():
         action='store_true',
         help='Run pathfinding validation'
     )
+    parser.add_argument(
+        '--animate',
+        action='store_true',
+        help='Show real-time generation animation'
+    )
+    parser.add_argument(
+        '--speed',
+        type=float,
+        default=0.5,
+        help='Animation speed in seconds between steps (default: 0.5)'
+    )
 
     args = parser.parse_args()
 
@@ -60,26 +71,41 @@ def main():
         print("Error: Floor number must be between 1 and 100")
         sys.exit(1)
 
-    # Create generator
+    # Create generator and renderer
     generator = DungeonGenerator(seed=args.seed)
+    renderer = ASCIIRenderer()
 
-    print(f"Generating Floor {args.floor}...")
-    if args.seed:
-        print(f"Using seed: {args.seed}")
+    # Setup animation callback if enabled
+    animate_callback = None
+    if args.animate:
+        def anim_callback(dun, msg):
+            # Build overlay lists
+            enemies = [(pos[0], pos[1], 'E' if i == 0 else 'e') for i, pos in enumerate(dun.enemies)]
+            resources = [(pos[0], pos[1], '$') for pos in dun.resources]
+            renderer.animate_step(dun, msg, enemies, resources, args.speed)
+        animate_callback = anim_callback
+    else:
+        print(f"Generating Floor {args.floor}...")
+        if args.seed:
+            print(f"Using seed: {args.seed}")
 
     # Generate dungeon
     dungeon = generator.generate(
         floor_number=args.floor,
         width=args.width,
-        height=args.height
+        height=args.height,
+        animate_callback=animate_callback
     )
+
+    # Clear for final render if animating
+    if args.animate:
+        renderer.clear_screen()
 
     # Override biome if specified
     if args.biome:
         dungeon.biome = args.biome
 
-    # Render dungeon with enemies and resources
-    renderer = ASCIIRenderer()
+    # Render dungeon with enemies and resources (renderer already created above)
 
     # Build overlay lists for rendering
     enemies_overlay = []

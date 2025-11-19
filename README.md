@@ -8,6 +8,49 @@
 
 ---
 
+## 🚀 CURRENT STATUS (Updated: Nov 19, 2025)
+
+### ✅ PHASE 1 COMPLETE!
+
+**What's Working:**
+- ✅ Procedural dungeon generation (rooms + corridors)
+- ✅ Biome-specific enemy and resource placement
+- ✅ **AI pathfinding validation (BFS algorithm)** - THE KEY AI COMPONENT
+- ✅ ASCII visualization with overlays
+- ✅ **REAL-TIME ANIMATION** - Watch the AI generate dungeons!
+
+**Professor Feedback:**
+- ✅ Changed scope from 100 floors → 3 high-quality floors
+- ✅ ASCII terminal output approved (no graphics needed)
+- ✅ Animation feature added for impressive demos
+
+### 🎯 Quick Start
+
+```bash
+# Basic generation
+python main.py --floor 1
+
+# With validation (shows AI pathfinding)
+python main.py --floor 1 --validate
+
+# WITH ANIMATION (watch it generate in real-time!)
+python main.py --floor 1 --animate --speed 0.5
+
+# All options
+python main.py --floor 2 --width 60 --height 40 --animate --speed 0.3 --validate
+```
+
+### 📋 Next Steps
+
+**Phase 2: Polish & Finalize (TODO)**
+1. Create 3 polished example floors for professor
+2. Write demonstration script
+3. Add more detailed validation output
+4. Performance optimization (if needed)
+5. Final testing and documentation
+
+---
+
 ## Table of Contents
 1. [Project Overview](#project-overview)
 2. [Project Goals](#project-goals)
@@ -662,13 +705,26 @@ Standard library only (no external packages required)
 python main.py
 
 # Generate specific floor
-python main.py --floor 50
+python main.py --floor 1
+
+# With AI validation (shows pathfinding)
+python main.py --floor 1 --validate
+
+# WITH ANIMATION (real-time generation visualization!)
+python main.py --floor 1 --animate
+
+# Animation with custom speed (seconds between steps)
+python main.py --floor 1 --animate --speed 0.3  # Fast
+python main.py --floor 1 --animate --speed 1.0  # Slow for demos
+
+# All features combined
+python main.py --floor 2 --width 60 --height 40 --animate --validate --speed 0.5
 
 # Generate with specific biome
 python main.py --biome jungle
 
 # Generate and save to file
-python main.py --floor 11 --output floor_11.txt
+python main.py --floor 1 --output floor_1.txt
 ```
 
 ---
