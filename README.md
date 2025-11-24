@@ -789,9 +789,8 @@ python main.py --floor 1 --output floor_1.txt
 
 ## Credits
 
-**Student:** [Your Name]
+**Student:** [Brandon Pyatt]
 **Course:** AI Engineering (CS 320)
-**Semester:** [Current Semester]
 
 **Inspired by:** "Dungeon Ascend" game concept from personal game design document
 
