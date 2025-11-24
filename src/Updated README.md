@@ -1,215 +1,178 @@
-Dungeon Ascend Generator — Project Plan (CS 320)
-Overview
+# Dungeon Ascend Generator — Project Plan (CS 320)
 
-This project implements a procedural dungeon generator that produces randomized ASCII dungeon floors using rooms, corridors, biomes, enemies, and resources.
+## Overview
+This project implements a procedural dungeon generator that produces randomized ASCII dungeon floors using rooms, corridors, biomes, enemies, and resources.  
 A BFS-based validator evaluates each floor for connectivity, reachability, and resource accessibility.
 
-An ADK agent, EIDOLON-7, provides natural language access to the generator and can answer questions about dungeon structure, biomes, enemies, and floor progression.
+An ADK agent, **EIDOLON-7**, provides natural language access to the generator and can answer questions about dungeon structure, biomes, enemies, and floor progression.  
+EIDOLON-7 will also support ADK issue monitoring for automated project status updates.
 
-This document describes the current status of the project and the plan for completing the ADK integration.
+---
 
-Current Progress (Checkpoint 1 Complete)
-Dungeon Generation
+## Current Progress (Checkpoint 1 Complete)
 
-Grid-based floor creation
+### Dungeon Generation
+- Grid-based room and corridor creation  
+- Biome selection  
+- Enemy and resource placement  
+- Configurable height/width  
+- ASCII rendering  
+- Floor parameter loading  
 
-Room and corridor placement
-
-Biome selection
-
-Resource placement
-
-Enemy placement
-
-Configurable height/width
-
-ASCII renderer
-
-AI Validation
-
+### AI Validation
 Implemented using classical search (BFS):
+- Room connectivity  
+- Reachability of all walkable tiles  
+- Resource accessibility  
+- Valid/invalid floor classification  
+- Pathability analysis  
 
-Room connectivity
+### Data Files
+- `biomes.json`  
+- `enemies.json`  
+- `resources.json`  
 
-Reachable tile count
+### CLI Arguments
+- `--floor`  
+- `--validate`  
+- `--animate`  
+- `--speed`  
+- `--width`, `--height`  
+- `--biome`
 
-Resource accessibility
+The generator, renderer, and validator are all working.
 
-Pathability evaluation
+---
 
-Basic “valid / invalid floor” logic
+## Next Steps (Checkpoint 2)
 
-Data Files
+### 1. Dungeon Quality Metrics
+Add a structured evaluation layer with:
 
-biomes.json
+- **Pathability Percentage**  
+- **Resource Accessibility Percentage**  
+- **Connected Rooms Count**  
+- **Total Walkable Tiles**  
+- **Dungeon Quality Score (DQS)**  
 
-enemies.json
-
-resources.json
-
-CLI Arguments
-
---floor
-
---validate
-
---animate
-
---speed
-
---width / --height
-
---biome
-
-The generator, renderer, and validator are all functional.
-
-Next Steps (Checkpoint 2)
-1. Dungeon Quality Metrics
-
-Add a structured evaluation layer that produces:
-
-Pathability Percentage
-
-Resource Accessibility Percentage
-
-Connected Rooms Count
-
-Total Walkable Tiles
-
-Dungeon Quality Score (DQS)
-
-These metrics will be returned to the user and used by the ADK agent.
-
-Example:
-
+Example output:
 Pathability: 92.4%
 Resources Accessible: 100%
 Connected Rooms: 6 / 6
 DQS: 0.91 (Good)
 
-2. ADK Natural Language Services (EIDOLON-7)
 
-EIDOLON-7 will provide two services:
+These metrics will be returned by the generator and referenced by the ADK agent.
 
-A. Dungeon Knowledge Service
+---
 
-Users can ask:
+### 2. ADK Natural Language Services (EIDOLON-7)
 
-“Explain the Snow biome.”
+EIDOLON-7 will implement two ADK services:
 
-“What enemies can spawn in the Vampire biome?”
+#### A. Dungeon Knowledge Service
+Users will be able to ask questions such as:
 
-“What happens on Floor 33?”
+- "Explain the Snow biome."  
+- "What enemies spawn in the Vampire biome?"  
+- "What resources appear in Swamp floors?"  
+- "What happens on Floor 33?"  
+- "How does difficulty scale?"  
 
-“List the resources available in the Swamp biome.”
+The agent responds using the JSON data and the floor progression logic.
 
-“How does difficulty scale?”
+---
 
-EIDOLON-7 responds using the existing JSON data.
+#### B. Dungeon Generation Service
+Users will request dungeon creation via natural language:
 
-B. Dungeon Generation Service
+- "Generate Floor 12."  
+- "Create a Rocky biome dungeon."  
+- "Show me a small dungeon."  
+- "Evaluate this dungeon."  
 
-Users can request:
+Responses will include:
+- ASCII dungeon  
+- Pathability metrics  
+- Resource accessibility  
+- Biome summary  
+- Optional narrative description  
 
-“Generate Floor 12.”
+This satisfies the ADK natural language service requirement.
 
-“Make a dungeon in the Rocky biome.”
+---
 
-“Show me a small dungeon.”
+## Required ADK Feature: GitHub Issue Monitor
 
-“Evaluate this dungeon.”
+EIDOLON-7 will implement the required ADK GitHub Issue Service:
 
-The service will return:
-
-ASCII dungeon
-
-Pathability %
-
-Resource accessibility %
-
-Biome information
-
-Optional narrative description
-
-This fulfills the ADK natural language requirement.
-
-Required ADK Feature: GitHub Issue Monitor
-
-EIDOLON-7 will also:
-
-Monitor the shared hw9-issues repository
-
-Only respond to issues explicitly addressed to it
-
-Analyze this project’s repository (not the issue repo)
-
-Produce status updates including:
-
-Implemented features
-
-Remaining tasks
-
-Known issues
-
-Current generator status
-
-Validation summary
+- Monitors the shared `hw9-issues` repository  
+- Responds only to issues explicitly addressed to **EIDOLON-7**  
+- Analyzes *this project’s* repository for:
+  - completed features  
+  - remaining tasks  
+  - known issues  
+  - generator health  
+  - current validation metrics  
 
 This fulfills ADK Requirement #1.
 
-How AI Is Used
+---
 
-This project does not use neural networks or model training.
-The AI components are:
+## How AI Is Used
 
-Classical Search (BFS)
+This project does **not** require training a model or using neural networks.
 
+AI components include:
+
+### Classical Search (BFS)
 Used to validate:
+- Connectivity  
+- Resource access  
+- Reachability  
+- Floor structure fairness  
 
-Dungeon reachability
+### Evaluation & Scoring System
+DQS provides measurable structure for:
+- assessing floor quality  
+- comparing generation attempts  
+- identifying regeneration needs  
 
-Resource accessibility
+### ADK Agent (LLM)
+Handles:
+- natural language interpretation  
+- dungeon information queries  
+- floor generation and evaluation  
+- GitHub issue responses  
 
-Room connectivity
+This approach satisfies the AI + ADK goals while staying in scope.
 
-Overall map fairness
+---
 
-Evaluation Metrics
+## Final Deliverables
 
-Numeric metrics act as a tuning and comparison mechanism, similar to evaluation loops in training, but without ML.
+1. Fully functional dungeon generator  
+2. BFS-based validation system with DQS metrics  
+3. EIDOLON-7 natural language ADK services  
+4. GitHub issue monitoring bot  
+5. Updated README and documentation  
+6. Example outputs and test cases  
 
-ADK Agent (LLM)
+---
 
-Used to:
+## Optional Extensions
+Not required, but possible additions:
 
-Interpret natural language
+- Multi-floor generation  
+- Heatmap visualization  
+- Auto-tuning based on DQS  
+- Additional lore/narrative responses  
 
-Call the generator/validator
+---
 
-Explain biomes and enemies
+## Status
+Checkpoint 1 complete.  
+Checkpoint 2 in progress.
 
-Provide status updates
+EIDOLON-7 development begins next.
 
-Final Deliverables
-
-Fully functional dungeon generator
-
-BFS-based validation system with DQS metrics
-
-EIDOLON-7 ADK natural language services
-
-GitHub issue monitoring bot
-
-Updated documentation and examples
-
-Optional Extensions
-
-(Not required, but available if time allows)
-
-Multi-floor generation
-
-Heatmap visualization
-
-Auto-tuning based on DQS
-
-More in-world narrative responses
