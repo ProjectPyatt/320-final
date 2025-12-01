@@ -8,6 +8,7 @@ import sys
 from src.generator import DungeonGenerator
 from src.renderer import ASCIIRenderer
 from src.pathfinding import PathfindingValidator
+from src.quality_metrics import DungeonQualityMetrics
 
 
 def main():
@@ -51,6 +52,11 @@ def main():
         '--validate',
         action='store_true',
         help='Run pathfinding validation'
+    )
+    parser.add_argument(
+        '--evaluate',
+        action='store_true',
+        help='Run full DQS quality evaluation'
     )
     parser.add_argument(
         '--animate',
@@ -132,6 +138,13 @@ def main():
         print(f"Connected Rooms: {results['connected_rooms']}/{results['total_rooms']}")
         print(f"Accessible Resources: {results['accessible_resources']}/{results['total_resources']}")
         print(f"Reachable Tiles: {results['reachable_tiles']}")
+        print()
+    
+    # Full quality evaluation if requested
+    if args.evaluate:
+        print("\nRunning Dungeon Quality Score (DQS) evaluation...")
+        quality_eval = DungeonQualityMetrics(dungeon)
+        print(quality_eval.generate_report())
         print()
 
     # Output
