@@ -51,6 +51,7 @@ class ASCIIRenderer:
         if show_info:
             lines.append("")
             lines.append(self._render_footer(dungeon))
+            lines.append(self._render_legend())
 
         return "\n".join(lines)
 
@@ -68,6 +69,16 @@ class ASCIIRenderer:
         stats.append(f"Enemies: {len(dungeon.enemies)}")
         stats.append(f"Resources: {len(dungeon.resources)}")
         return " | ".join(stats)
+
+    def _render_legend(self) -> str:
+        """Render symbol legend/glossary"""
+        legend = []
+        legend.append("")
+        legend.append("LEGEND:")
+        legend.append("  # = Wall      . = Floor     , = Corridor")
+        legend.append("  E = Boss      e = Enemy     $ = Resource")
+        legend.append("  + = Door      X = Exit      (space) = Void")
+        return "\n".join(legend)
 
     def render_with_overlay(self, dungeon: Dungeon, enemies: list = None, resources: list = None) -> str:
         """
@@ -111,6 +122,7 @@ class ASCIIRenderer:
 
         lines.append("")
         lines.append(self._render_footer(dungeon))
+        lines.append(self._render_legend())
 
         return "\n".join(lines)
 
